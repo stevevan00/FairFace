@@ -24,8 +24,8 @@ def rect_to_bb(rect):
 	return (x, y, w, h)
 
 def detect_face(image_paths,  SAVE_DETECTED_AT, default_max_size=800,size = 300, padding = 0.25):
-    cnn_face_detector = dlib.cnn_face_detection_model_v1('./dlib_models/mmod_human_face_detector.dat')
-    sp = dlib.shape_predictor('./dlib_models/shape_predictor_5_face_landmarks.dat')
+    cnn_face_detector = dlib.cnn_face_detection_model_v1('./FairFace/dlib_models/mmod_human_face_detector.dat')
+    sp = dlib.shape_predictor('./FairFace/dlib_models/shape_predictor_5_face_landmarks.dat')
     base = 2000  # largest width and height
     for index, image_path in enumerate(image_paths):
         if index % 250 == 0:
