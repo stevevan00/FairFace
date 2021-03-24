@@ -28,7 +28,7 @@ def detect_face(image_paths,  SAVE_DETECTED_AT, default_max_size=800,size = 300,
     cnn_face_detector = dlib.cnn_face_detection_model_v1('./FairFace/dlib_models/mmod_human_face_detector.dat')
     sp = dlib.shape_predictor('./FairFace/dlib_models/shape_predictor_5_face_landmarks.dat')
     base = 2000  # largest width and height
-    for index, image_path in tqdm(enumerate(image_paths)):
+    for index, image_path in enumerate(tqdm(image_paths)):
         if index % 250 == 0:
             print('---%d/%d---' %(index, len(image_paths)))
         img = dlib.load_rgb_image(image_path)
